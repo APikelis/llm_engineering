@@ -51,7 +51,26 @@ Limitations of Benchmarks:
 4. HuggingFace
 5. LiveBench
 
+## Commercial Use Cases
+
+Automate -> Augment -> Differentiate
+
+> GPT Wrappers - Apps integrate LLMs in their product i.e., DuoLingo, Copilots
+> Bespoke AI Platform - Specialised AI with domain expertise (RAG, Tools, Inference Time Techniques, Propriatary Data ) i.., Palantir, Salesforce Health, Harvey (LLM for Law)
+> Agentic AI - More prominent in Technical Domains like Software Engineering
+
+5 steps: Understand Business Problem, Prepare (select candidate models), Model Selection (prototyping), Customise (build), Productionise
+
 ## Technical Metrics vs Business Outcomes
 
+### Technical - best for optimising
+> Loss - Cross Entropy Loss
+> Perplexity
+> Accuracy
+> Precision, Recall, F1
+> AUC-ROC
 
-
+### Business Outcomes
+> KPIs tied to Biz Outcomes (Satisfaction/NPS, revenue)
+> Time and cost reduction
+> Benchmark comparisons
