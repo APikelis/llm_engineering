@@ -55,7 +55,7 @@ def answer_question(question: str, history: list[dict] = []) -> tuple[str, list[
     context = "\n\n".join(doc.page_content for doc in docs)
     system_prompt = SYSTEM_PROMPT.format(context=context)
     messages = [SystemMessage(content=system_prompt)]
-    messages.extend(convert_to_messages(history))
+    messages.extend(convert_to_messages(history)) #converts OpenAI Messages into Langchain style messages
     messages.append(HumanMessage(content=question))
     response = llm.invoke(messages)
     return response.content, docs
