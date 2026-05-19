@@ -155,7 +155,7 @@ Provide detailed feedback and scores from 1 (very poor) to 5 (ideal) for each di
     # Call LLM judge with structured outputs (async)
     judge_response = completion(model=MODEL, messages=judge_messages, response_format=AnswerEval)
 
-    answer_eval = AnswerEval.model_validate_json(judge_response.choices[0].message.content)
+    answer_eval = AnswerEval.model_validate_json(judge_response.choices[0].message.content) #utilises pydantic object above
 
     return answer_eval, generated_answer, retrieved_docs
 

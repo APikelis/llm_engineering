@@ -100,7 +100,7 @@ def make_messages(document):
     ]
 
 
-@retry(wait=wait)
+@retry(wait=wait) # rate limit solution (backoff)
 def process_document(document):
     messages = make_messages(document)
     response = completion(model=MODEL, messages=messages, response_format=Chunks)
@@ -115,7 +115,7 @@ def create_chunks(documents):
     If you get a rate limit error, set the WORKERS to 1.
     """
     chunks = []
-    with Pool(processes=WORKERS) as pool:
+    with Pool(processes=WORKERS) as pool: # multi processing
         for result in tqdm(pool.imap_unordered(process_document, documents), total=len(documents)):
             chunks.extend(result)
     return chunks
